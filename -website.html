@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Profile</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #bfc1e2be;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Main ID box */
+        #student-id {
+            width: 420px;
+            padding: 25px;
+            background-color: aquamarine;
+            border-radius: 10px;
+        }
+
+        /* Heading */
+        #heading {
+            text-align: center;
+            font-size: 36px; /* 3 times bigger */
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        /* Info text */
+        .info {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .label {
+            font-weight: bold;
+            display: inline-block;
+            width: 80px;
+        }
+
+        /* Status colors */
+        .offline {
+            color: red;
+            font-weight: bold;
+        }
+
+        .online {
+            color: green;
+            font-weight: bold;
+        }
+
+        /* Buttons side by side */
+        .buttons {
+            margin-top: 25px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        button {
+            border: none;
+            padding: 10px 15px;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #login {
+            background-color: green;
+        }
+
+        #logout {
+            background-color: red;
+        }
+
+        #change {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="student-id">
+    <div id="heading">Student Profile</div>
+
+    <div class="info">
+        <span class="label">Name</span>: Your Name
+    </div>
+
+    <div class="info">
+        <span class="label">Age</span>: 19
+    </div>
+
+    <div class="info">
+        <span class="label">Course</span>: 
+        <span id="course">Web Development</span>
+    </div>
+
+    <div class="info">
+        <span class="label">Status</span>: 
+        <span id="status" class="offline">Offline</span>
+    </div>
+
+    <div class="buttons">
+        <button id="login" onclick="login()">Login</button>
+        <button id="logout" onclick="logout()">Logout</button>
+        <button id="change" onclick="changeCourse()">Change Course</button>
+    </div>
+</div>
+
+<script>
+    function login() {
+        const status = document.getElementById("status");
+        status.innerText = "Online";
+        status.className = "online";
+    }
+
+    function logout() {
+        const status = document.getElementById("status");
+        status.innerText = "Offline";
+        status.className = "offline";
+    }
+
+    function changeCourse() {
+        document.getElementById("course").innerText = "Data Management";
+    }
+</script>
+
+</body>
+</html>
